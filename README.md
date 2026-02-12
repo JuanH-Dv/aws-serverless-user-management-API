@@ -71,4 +71,4 @@ Special thanks to **Workshop M&O** for providing comprehensive hands-on AWS trai
 
 ---
 
-*This project is for educational and portfolio demonstration purposes.*
+*This project is for educational purposes.*
