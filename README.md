@@ -11,7 +11,7 @@
 Design and implement a fully serverless REST API on AWS for user management, demonstrating practical experience with **DynamoDB**, **Lambda**, and **API Gateway** while applying production-ready patterns for security and scalability.
 
 
-## Hypothetical Use Case
+## Business Use Case
 
 This project models a lightweight user profile and credential-check API that could be used as the backend for:
 
@@ -32,6 +32,13 @@ The same pattern can easily extend to other domains such as library books, order
 | API Gateway | RESTful API interface with request/response transformation |
 | IAM Role | Least-privilege security model for Lambda-DynamoDB access |
 
+<p align="center">
+  <img src="https://github.com/JuanH-Dv/aws-serverless-user-management-API/blob/main/screenshots/arquitectura%20serverless%20(1).png?raw=true">
+  <br>
+  Application Architecture 
+</p>
+
+
 ## Implementation Summary
 
 ### Data and Security Setup
@@ -49,9 +56,22 @@ The same pattern can easily extend to other domains such as library books, order
   - **POST**: Insert a new user item into the `Usuarios` table based on a JSON payload.
 - Used the `boto3` SDK to read/write items in DynamoDB and return structured JSON responses.
 
+<p align="center">
+  <img src="https://github.com/JuanH-Dv/aws-serverless-user-management-API/blob/main/screenshots/Lambda_Function.png?raw=true">
+  <br>
+  Lambda Handler 
+</p>
+
 ### API Gateway
 
 - Created a REST API and defined the `/Usuarios` resource.
+
+<p align="center">
+  <img src="https://github.com/JuanH-Dv/aws-serverless-user-management-API/blob/main/screenshots/Usuarios_API_Resource.png?raw=true">
+  <br>
+  API Resource creation
+</p>
+
 - Configured:
   - **GET method** with query string parameter `username`.
   - **POST method** accepting a JSON body for user creation.
@@ -59,16 +79,18 @@ The same pattern can easily extend to other domains such as library books, order
 - Deployed the API to a stage (for example: `prod`) and obtained a public invoke URL.
 - Enabled CORS to support browser and tooling access.
 
+
+## Validation
+
+<p align="center">
+  <img src="https://github.com/JuanH-Dv/aws-serverless-user-management-API/blob/main/screenshots/Postman_Validation.png?raw=true">
+  <br>
+  Postman Validation 
+</p>
+
+
 ## Key Learnings
 
 - How to design a small but complete serverless backend that separates concerns across API Gateway, Lambda, and DynamoDB.
 - How to use IAM roles to securely connect Lambda to DynamoDB without embedding credentials in code.
 - How Lambda proxy integration simplifies request/response handling by passing full HTTP payloads to your function.
-
-## Acknowledgments
-
-Special thanks to **Workshop M&O** for providing comprehensive hands-on AWS training materials and guided laboratory environment.
-
----
-
-*This project is for educational purposes.*
