@@ -89,7 +89,7 @@ The same pattern can easily extend to other domains such as library books, order
 </p>
 
 
-## Key Learnings
+## Takeaways
 
 - How to design a small but complete serverless backend that separates concerns across API Gateway, Lambda, and DynamoDB.
 - How to use IAM roles to securely connect Lambda to DynamoDB without embedding credentials in code.
